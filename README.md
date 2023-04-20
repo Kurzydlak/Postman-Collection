@@ -9,7 +9,7 @@ To use this Postman collection, you need:
 - Postman application - you can download it from https://www.postman.com/downloads/
 - [Trello](https://trello.com/home) account with created workspace and Power-up (In iframe connector URL u can use https://my-power-up.com) [Here is a instruction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/)
 - After create your Power-up you must generate API key and token
-- If you have generated token and key you must add this to collection variables (without this step collection won't run cause of no authorization)
+- If you have generated token and key you must add this to collection variables in postman (without this step collection won't run cause of no authorization)
 
 ## How to import the Postman collection
 

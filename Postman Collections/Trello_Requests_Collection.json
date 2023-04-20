@@ -1,0 +1,1317 @@
+{
+	"info": {
+		"_postman_id": "fa7ba78a-9785-4df9-b67b-6587c483b557",
+		"name": "Trello Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BOARD",
+			"item": [
+				{
+					"name": "CREATE A BOARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6a19fa42-ed5b-4686-9e21-56e54fa7b7d4",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idBoard\") === undefined) {",
+									"    pm.collectionVariables.set(\"idBoard\",response.id);",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "66e13c7b-c39a-4ad8-b928-c342a49ed562",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/?name=COLT01.2023&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "COLT01.2023"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE A BOARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e462bfb-5210-47bc-b172-238cc0b07973",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "91cb0482-1a6a-4bb4-9020-9a3934374d2e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"desc\" :\"API TESTING BOARD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{idBoard}}?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{idBoard}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A BOARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1862fe92-f2ef-4136-ae4f-bd128a4e2547",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "6100d639-c32d-4942-bb6a-e27cddafac3c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{idBoard}}?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{idBoard}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A BOARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3fd0fedd-f9e9-4396-9e10-8c254869c5ca",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"pm.collectionVariables.unset(\"idBoard\", response.id);",
+									"pm.collectionVariables.unset(\"idList\", response.id);",
+									"pm.collectionVariables.unset(\"idCard\", response.id);",
+									"pm.collectionVariables.unset(\"idComment\", response.id);",
+									"pm.collectionVariables.unset(\"idLabel\", response.id);",
+									"pm.collectionVariables.unset(\"idAttachment\", response.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "7a01388e-ca3a-49bb-b5c8-b279ed32e604",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{idBoard}}?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{idBoard}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "a5e9a3f0-c83f-442a-a0e2-25b9fa7515b8"
+		},
+		{
+			"name": "LIST",
+			"item": [
+				{
+					"name": "CREATE NEW LIST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "25942e4b-d46c-4d23-9b14-07f17cc98b7b",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idList\") === undefined) {",
+									"    pm.collectionVariables.set(\"idList\",response.id);",
+									"",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "7dc4a02f-7b8e-4c2b-ac82-75a177774a67",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists?name=Testowa&idBoard={{idBoard}}&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Testowa"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{idBoard}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A LIST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f41edf38-8488-459b-a88a-b712009f91d1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5e136c04-660a-4699-b3b8-b6c6e5f4e92b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idList}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE A LIST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39d21e43-fdb8-43d9-81ec-65aaf8885e21",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3bfef928-718a-470a-a3f1-808fe17c286d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Testowa1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.trello.com/1/lists/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "",
+									"value": null,
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idList}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "04c6799c-99d1-42c1-8f77-cc5efbc01d14"
+		},
+		{
+			"name": "CARD",
+			"item": [
+				{
+					"name": "CREATE NEW CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "740852a7-b130-4e67-b415-31d0e8735a13",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idCard\") === undefined) {",
+									"    pm.collectionVariables.set(\"idCard\",response.id);",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "717f8a30-c7b8-4e28-9048-c7f75ad18266",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards?idList={{idList}}&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "{{idList}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ccd49ee3-1e09-49c8-a297-4aef2f052770",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "69089078-e645-44e1-8c17-a1c95c1a1b49",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD A NEW COMMENT TO A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ef32bad-673e-4783-b6ec-0b0370338875",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idComment\") === undefined) {",
+									"    pm.collectionVariables.set(\"idComment\",response.id);",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "b5f75a52-b6b3-4eab-a985-a39a0035bd54",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id/actions/comments?text=Test comment&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"actions",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Test comment"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A COMMENT ON A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b50f196-6ad6-4d5c-8003-6efbfff7d98d",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"pm.collectionVariables.unset(\"idComment\", response.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "e2152a19-a9fa-45ad-a96c-7701b7ced8a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id/actions/:idc/comments?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"actions",
+								":idc",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								},
+								{
+									"key": "idc",
+									"value": "{{idComment}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f58ab0d0-f688-4103-97e4-2f66286f803c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "13889086-ebd8-4348-ab24-b759fcb910e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"TestCard\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e9a7320f-2a37-423c-8030-fe9d399e158d",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"pm.collectionVariables.unset(\"idCard\", response.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "c7eefe33-d62c-403e-80e2-7ae8f47f25cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "a93945b4-9a69-4650-9a6d-e01fdd183297"
+		},
+		{
+			"name": "LABEL",
+			"item": [
+				{
+					"name": "CREATE A LABEL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9bd20949-5f28-4154-9a06-5ebaa2b80989",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idLabel\") === undefined) {",
+									"    pm.collectionVariables.set(\"idLabel\",response.id);",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f5cc376f-6804-4e17-bf5d-023fb04092b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/labels?name=TestLabel&color=red&idBoard={{idBoard}}&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "TestLabel"
+								},
+								{
+									"key": "color",
+									"value": "red"
+								},
+								{
+									"key": "idBoard",
+									"value": "{{idBoard}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A LABEL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bd31a46-1277-4a03-9394-a1a5830a59ab",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3faa4601-6343-4399-af75-6884c1552e53",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/labels/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"labels",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idLabel}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE A LABEL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "afb4a7a5-9268-42b5-b814-37f9c3c7be73",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "6fb92c80-b930-407b-81f5-08be4cbf4f22",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"TestLabel\",\n    \"color\": \"yellow\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.trello.com/1/labels/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"labels",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idLabel}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE A LABEL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "218d54bc-0bf8-4e7d-933c-97b01a0d2b5f",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"pm.collectionVariables.unset(\"idLabel\", response.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "db3f53ae-4c05-42f0-8cbf-a2f3fce302ca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/labels/:id?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"labels",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idLabel}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "40e8f08b-412a-445b-827d-7436e43feb96"
+		},
+		{
+			"name": "ATTACHMENTS",
+			"item": [
+				{
+					"name": "CREATE ATTACHMENT ON CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45fbddfd-da1f-44b0-b8ae-fdc35b1ae7d1",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"if (pm.collectionVariables.get(\"idAttachment\") === undefined) {",
+									"    pm.collectionVariables.set(\"idAttachment\",response.id);",
+									"",
+									"    pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3cd2ac96-3cb2-4418-8f7e-61d79d692691",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://www.google.pl\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id/attachments?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"attachments"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AN ATTACHMENT ON A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ffda09f-e28e-42e6-a680-82adb5d044ec",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "33abb966-e709-411e-b48c-d2970c55f044",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id/attachments?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"attachments"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE AN ATTACHMENT ON A CARD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10ff7537-8211-42f0-948e-93e2d6ab2f7a",
+								"exec": [
+									"let response = pm.response.json();",
+									"",
+									"pm.collectionVariables.unset(\"idAttachment\", response.id);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"    });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "ec701068-03fb-442b-8879-87418b6b8169",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/cards/:id/attachments/:ida?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"cards",
+								":id",
+								"attachments",
+								":ida"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{idCard}}",
+									"type": "string"
+								},
+								{
+									"key": "ida",
+									"value": "{{idAttachment}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "aaaaa23c-24ab-462f-97f4-54cbc4bf5fbd"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "eca86c56-be57-4b77-aeba-2af27b00616e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "942b24cc-7c0a-40a2-b52b-bf79c81a436a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

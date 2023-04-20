@@ -1,4 +1,4 @@
-# Postman-Collection
+# Postman Collection
 This is my postman collection from COLT 01/2023 Cherry IT initiative.
 This collection based on Trello board and if u want to run this collection follow this steps.
 

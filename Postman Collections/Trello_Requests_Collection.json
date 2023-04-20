@@ -30,7 +30,7 @@
 							}
 						}
 					],
-					"_postman_id": "66e13c7b-c39a-4ad8-b928-c342a49ed562",
+					"id": "66e13c7b-c39a-4ad8-b928-c342a49ed562",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -84,7 +84,7 @@
 							}
 						}
 					],
-					"_postman_id": "91cb0482-1a6a-4bb4-9020-9a3934374d2e",
+					"id": "91cb0482-1a6a-4bb4-9020-9a3934374d2e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -143,7 +143,7 @@
 							}
 						}
 					],
-					"_postman_id": "6100d639-c32d-4942-bb6a-e27cddafac3c",
+					"id": "6100d639-c32d-4942-bb6a-e27cddafac3c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -202,7 +202,7 @@
 							}
 						}
 					],
-					"_postman_id": "7a01388e-ca3a-49bb-b5c8-b279ed32e604",
+					"id": "7a01388e-ca3a-49bb-b5c8-b279ed32e604",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -237,7 +237,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "a5e9a3f0-c83f-442a-a0e2-25b9fa7515b8"
+			"id": "a5e9a3f0-c83f-442a-a0e2-25b9fa7515b8"
 		},
 		{
 			"name": "LIST",
@@ -265,7 +265,7 @@
 							}
 						}
 					],
-					"_postman_id": "7dc4a02f-7b8e-4c2b-ac82-75a177774a67",
+					"id": "7dc4a02f-7b8e-4c2b-ac82-75a177774a67",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -322,7 +322,7 @@
 							}
 						}
 					],
-					"_postman_id": "5e136c04-660a-4699-b3b8-b6c6e5f4e92b",
+					"id": "5e136c04-660a-4699-b3b8-b6c6e5f4e92b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -355,8 +355,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idList}}",
-									"type": "string"
+									"value": "{{idList}}"
 								}
 							]
 						}
@@ -379,7 +378,7 @@
 							}
 						}
 					],
-					"_postman_id": "3bfef928-718a-470a-a3f1-808fe17c286d",
+					"id": "3bfef928-718a-470a-a3f1-808fe17c286d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -427,8 +426,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idList}}",
-									"type": "string"
+									"value": "{{idList}}"
 								}
 							]
 						}
@@ -436,7 +434,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "04c6799c-99d1-42c1-8f77-cc5efbc01d14"
+			"id": "04c6799c-99d1-42c1-8f77-cc5efbc01d14"
 		},
 		{
 			"name": "CARD",
@@ -463,7 +461,7 @@
 							}
 						}
 					],
-					"_postman_id": "717f8a30-c7b8-4e28-9048-c7f75ad18266",
+					"id": "717f8a30-c7b8-4e28-9048-c7f75ad18266",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -516,7 +514,7 @@
 							}
 						}
 					],
-					"_postman_id": "69089078-e645-44e1-8c17-a1c95c1a1b49",
+					"id": "69089078-e645-44e1-8c17-a1c95c1a1b49",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -549,8 +547,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -579,7 +576,7 @@
 							}
 						}
 					],
-					"_postman_id": "b5f75a52-b6b3-4eab-a985-a39a0035bd54",
+					"id": "b5f75a52-b6b3-4eab-a985-a39a0035bd54",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -618,8 +615,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -647,7 +643,7 @@
 							}
 						}
 					],
-					"_postman_id": "e2152a19-a9fa-45ad-a96c-7701b7ced8a3",
+					"id": "e2152a19-a9fa-45ad-a96c-7701b7ced8a3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -683,13 +679,11 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								},
 								{
 									"key": "idc",
-									"value": "{{idComment}}",
-									"type": "string"
+									"value": "{{idComment}}"
 								}
 							]
 						}
@@ -712,7 +706,7 @@
 							}
 						}
 					],
-					"_postman_id": "13889086-ebd8-4348-ab24-b759fcb910e6",
+					"id": "13889086-ebd8-4348-ab24-b759fcb910e6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -754,8 +748,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -783,7 +776,7 @@
 							}
 						}
 					],
-					"_postman_id": "c7eefe33-d62c-403e-80e2-7ae8f47f25cf",
+					"id": "c7eefe33-d62c-403e-80e2-7ae8f47f25cf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -816,8 +809,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -825,7 +817,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "a93945b4-9a69-4650-9a6d-e01fdd183297"
+			"id": "a93945b4-9a69-4650-9a6d-e01fdd183297"
 		},
 		{
 			"name": "LABEL",
@@ -852,7 +844,7 @@
 							}
 						}
 					],
-					"_postman_id": "f5cc376f-6804-4e17-bf5d-023fb04092b8",
+					"id": "f5cc376f-6804-4e17-bf5d-023fb04092b8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -913,7 +905,7 @@
 							}
 						}
 					],
-					"_postman_id": "3faa4601-6343-4399-af75-6884c1552e53",
+					"id": "3faa4601-6343-4399-af75-6884c1552e53",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -946,8 +938,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idLabel}}",
-									"type": "string"
+									"value": "{{idLabel}}"
 								}
 							]
 						}
@@ -970,7 +961,7 @@
 							}
 						}
 					],
-					"_postman_id": "6fb92c80-b930-407b-81f5-08be4cbf4f22",
+					"id": "6fb92c80-b930-407b-81f5-08be4cbf4f22",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1012,8 +1003,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idLabel}}",
-									"type": "string"
+									"value": "{{idLabel}}"
 								}
 							]
 						}
@@ -1041,7 +1031,7 @@
 							}
 						}
 					],
-					"_postman_id": "db3f53ae-4c05-42f0-8cbf-a2f3fce302ca",
+					"id": "db3f53ae-4c05-42f0-8cbf-a2f3fce302ca",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1074,8 +1064,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idLabel}}",
-									"type": "string"
+									"value": "{{idLabel}}"
 								}
 							]
 						}
@@ -1083,7 +1072,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "40e8f08b-412a-445b-827d-7436e43feb96"
+			"id": "40e8f08b-412a-445b-827d-7436e43feb96"
 		},
 		{
 			"name": "ATTACHMENTS",
@@ -1110,7 +1099,7 @@
 							}
 						}
 					],
-					"_postman_id": "3cd2ac96-3cb2-4418-8f7e-61d79d692691",
+					"id": "3cd2ac96-3cb2-4418-8f7e-61d79d692691",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1153,8 +1142,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -1177,7 +1165,7 @@
 							}
 						}
 					],
-					"_postman_id": "33abb966-e709-411e-b48c-d2970c55f044",
+					"id": "33abb966-e709-411e-b48c-d2970c55f044",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1211,8 +1199,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								}
 							]
 						}
@@ -1240,7 +1227,7 @@
 							}
 						}
 					],
-					"_postman_id": "ec701068-03fb-442b-8879-87418b6b8169",
+					"id": "ec701068-03fb-442b-8879-87418b6b8169",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1275,13 +1262,11 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "{{idCard}}",
-									"type": "string"
+									"value": "{{idCard}}"
 								},
 								{
 									"key": "ida",
-									"value": "{{idAttachment}}",
-									"type": "string"
+									"value": "{{idAttachment}}"
 								}
 							]
 						}
@@ -1289,7 +1274,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "aaaaa23c-24ab-462f-97f4-54cbc4bf5fbd"
+			"id": "aaaaa23c-24ab-462f-97f4-54cbc4bf5fbd"
 		}
 	],
 	"event": [
@@ -1312,6 +1297,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "76ebde17-2740-4b2e-b23c-fb30e33614fa",
+			"key": "idBoard",
+			"value": ""
 		}
 	]
 }

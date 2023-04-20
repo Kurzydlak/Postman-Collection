@@ -1298,5 +1298,37 @@
 				]
 			}
 		}
+	],
+	"variable": [
+		{
+			"id": "e5420113-9ac9-42f9-9289-00995cbd2e5a",
+			"key": "idBoard",
+			"value": ""
+		},
+		{
+			"id": "a8b7f5bc-95a3-442c-a746-2b2bd10148f2",
+			"key": "idList",
+			"value": ""
+		},
+		{
+			"id": "b9f1d9fb-af86-49b5-a253-8ff21b25680e",
+			"key": "idCard",
+			"value": ""
+		},
+		{
+			"id": "8d8d5bb0-cd8e-4b4b-aa2c-ad7ea346dbd4",
+			"key": "idComment",
+			"value": ""
+		},
+		{
+			"id": "09be08cf-97c9-43bc-8957-69b714d36fbc",
+			"key": "idLabel",
+			"value": ""
+		},
+		{
+			"id": "5b78a3ac-0302-4cb0-9eb7-c94ce0a8f06d",
+			"key": "idAttachment",
+			"value": ""
+		}
 	]
 }

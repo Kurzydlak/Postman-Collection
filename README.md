@@ -7,8 +7,8 @@ This collection based on Trello board and if u want to run this collection follo
 To use this Postman collection, you need:
 
 - Postman application - you can download it from https://www.postman.com/downloads/
-- [Trello](https://trello.com/home) account with generated key and token [Here is instruction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/)
-- If you have generated token and key you must add this to environment variables (without this step collection won't run cause of no authorization)
+- [Trello](https://trello.com/home) account with generated key and token [Here is a instruction](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/)
+- If you have generated token and key you must add this to collection variables (without this step collection won't run cause of no authorization)
 
 ## How to import the Postman collection
 
